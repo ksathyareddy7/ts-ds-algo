@@ -5,6 +5,6 @@ import {
   isPowerOfTwoSolution,
   binarySearchSolution,
   bubbleSortSolution,
-} from "./codevolution/algo";
+} from "./index";
 
 bubbleSortSolution();
