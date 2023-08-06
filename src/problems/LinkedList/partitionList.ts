@@ -1,4 +1,4 @@
-import { LinkedList, NodeOrNull } from "data-structures/LinkedList";
+import { LinkedList, NodeOrNull } from "data-structures/LinkedList/LinkedList";
 
 //! LEETCODE LINK -> https://leetcode.com/problems/partition-list/
 

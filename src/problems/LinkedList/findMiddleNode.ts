@@ -1,4 +1,4 @@
-import { LinkedList } from "data-structures/LinkedList";
+import { LinkedList } from "data-structures/LinkedList/LinkedList";
 
 //! LEETCODE PROBLEM LINK -> https://leetcode.com/problems/middle-of-the-linked-list/
 

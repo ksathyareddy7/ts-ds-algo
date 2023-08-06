@@ -4,7 +4,7 @@
 //? Given two sorted arrays nums1 and nums2 of size m and n respectively,
 //? return the median of the two sorted arrays.
 
-export function medianOfTwoSortedArrays(nums1: number[], nums2: number[]) {
+function medianOfTwoSortedArrays(nums1: number[], nums2: number[]) {
   let sorted = [...nums1, ...nums2].sort((a, b) => a - b);
   let len = sorted.length;
   return len % 2 === 0

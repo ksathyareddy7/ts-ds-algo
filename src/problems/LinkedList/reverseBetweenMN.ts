@@ -1,4 +1,8 @@
-import { LLNode, LinkedList, NodeOrNull } from "data-structures/LinkedList";
+import {
+  LLNode,
+  LinkedList,
+  NodeOrNull,
+} from "data-structures/LinkedList/LinkedList";
 
 //! LEETCODE LINK -> https://leetcode.com/problems/reverse-linked-list-ii/
 

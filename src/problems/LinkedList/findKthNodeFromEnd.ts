@@ -1,4 +1,4 @@
-import { LinkedList, NodeOrNull } from "data-structures/LinkedList";
+import { LinkedList, NodeOrNull } from "data-structures/LinkedList/LinkedList";
 
 //? return Kth node from the end of a linked list for given K
 
