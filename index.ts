@@ -1,3 +1,3 @@
-import { checkSwapNodesInPairDLL } from "index";
+import { checkMaximumElementInStream } from "index";
 
-checkSwapNodesInPairDLL();
+checkMaximumElementInStream();

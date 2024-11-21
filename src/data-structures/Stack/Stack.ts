@@ -1,20 +1,22 @@
-export type StackNodeOrNull = StackNode | null;
+export type StackNodeOrNull = StackNode<any> | null;
 
-export class StackNode {
-  value: number;
+export class StackNode<T> {
+  value: T;
   next: StackNodeOrNull = null;
-  constructor(value: number) {
+  constructor(value: T) {
     this.value = value;
   }
 }
 
-export class Stack {
+export class Stack<T> {
   height: number = 0;
-  top: StackNodeOrNull;
-  constructor(value: number) {
-    let node = new StackNode(value);
-    this.top = node;
-    this.height++;
+  top: StackNodeOrNull = null;
+  constructor(value?: T) {
+    if (value) {
+      let node = new StackNode(value);
+      this.top = node;
+      this.height++;
+    }
   }
 
   printStack() {
@@ -38,7 +40,15 @@ export class Stack {
     this.height = 0;
   }
 
-  push(value: number) {
+  isEmpty() {
+    return !this.height;
+  }
+
+  peek() {
+    return this.top;
+  }
+
+  push(value: T) {
     let node = new StackNode(value);
     if (this.top !== null) {
       node.next = this.top;
