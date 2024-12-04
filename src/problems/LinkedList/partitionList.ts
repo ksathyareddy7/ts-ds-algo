@@ -1,4 +1,8 @@
-import { LinkedList, NodeOrNull } from "data-structures/LinkedList/LinkedList";
+import {
+  LinkedList,
+  LLNode,
+  NodeOrNull,
+} from "data-structures/LinkedList/LinkedList";
 
 //! LEETCODE LINK -> https://leetcode.com/problems/partition-list/
 
@@ -8,37 +12,40 @@ class Problem extends LinkedList {
   }
 
   solution(x: number) {
-    let temp: NodeOrNull = this.head;
-    let left: LinkedList = new LinkedList(0);
-    let right: LinkedList = new LinkedList(0);
-    while (temp != null) {
-      if (temp.value < x) {
-        left.append(temp.value);
+    if (this.head === null) return;
+    let dummy1: LLNode = new LLNode(0);
+    let dummy2: LLNode = new LLNode(0);
+    let prev1: LLNode = dummy1;
+    let prev2: LLNode = dummy2;
+    let current: LLNode | null = this.head;
+
+    while (current != null) {
+      if (current.value < x) {
+        prev1.next = current;
+        prev1 = current;
       } else {
-        right.append(temp.value);
+        prev2.next = current;
+        prev2 = current;
       }
-      temp = temp.next;
+      current = current.next;
     }
-    this.head = left.head!.next;
-    right.head = right.head!.next;
-    left.tail!.next = right.head;
-    this.tail = right.tail;
+    prev2.next = null;
+    prev1.next = dummy2.next;
+    this.head = dummy1.next;
   }
 }
 
 export function partitionListSolution() {
-  let ll = new Problem(7);
+  //1,4,3,2,5,2
+  let ll = new Problem(1);
   ll.append(4);
-  ll.append(9);
-  ll.append(8);
-  ll.append(1);
-  ll.append(6);
+  ll.append(3);
   ll.append(2);
   ll.append(5);
-  ll.append(3);
-  console.log("******* INITIAL LINKED LIST VALUES *******");
+  ll.append(2);
+  console.log("******* INITIAL LINKED LIST VALUES *******\n");
   ll.printList();
-  ll.solution(5);
-  console.log("******* LINKED LIST REVERSED BETWEEN 2 AND 5 *******");
+  ll.solution(3);
+  console.log("\n******* LINKED LIST PARTITIONED BETWEEN 5 *******\n");
   ll.printList();
 }

@@ -1,3 +1,3 @@
-import { checkMaximumElementInStream } from "index";
+import * as solutions from "index";
 
-checkMaximumElementInStream();
+solutions.partitionListSolution();

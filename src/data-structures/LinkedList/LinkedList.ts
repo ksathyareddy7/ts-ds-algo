@@ -42,10 +42,13 @@ export class LinkedList {
 
   printList() {
     let temp = this.head;
+    let result = "";
     while (temp !== null) {
-      console.log(temp.value);
+      result += temp.value + " -> ";
       temp = temp.next;
     }
+    result += "NULL";
+    console.log(result);
   }
 
   //* add a node at the end of the linked list.

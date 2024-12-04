@@ -1,4 +1,5 @@
 //? DOUBLE LINKED LIST
+export * from "problems/LinkedList/partitionList";
 export * from "problems/DoubleLinkedList/reverseList";
 export * from "problems/DoubleLinkedList/isPalindrome";
 export * from "problems/DoubleLinkedList/swapFirstAndLast";
