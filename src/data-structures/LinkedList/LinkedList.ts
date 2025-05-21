@@ -40,7 +40,7 @@ export class LinkedList {
     console.log("Length of LL: " + this.length);
   }
 
-  printList() {
+  printList(): void {
     let temp = this.head;
     let result = "";
     while (temp !== null) {
@@ -52,7 +52,7 @@ export class LinkedList {
   }
 
   //* add a node at the end of the linked list.
-  append(value: number) {
+  append(value: number): boolean {
     let node = new LLNode(value);
     if (this.length === 0) {
       this.head = node;
@@ -65,7 +65,7 @@ export class LinkedList {
   }
 
   //* remove the last node of the linked list and return its value;
-  removeLast() {
+  removeLast(): number | null {
     if (this.length === 0) return null;
     let temp = this.head;
     let pre = this.head;
@@ -83,11 +83,11 @@ export class LinkedList {
     this.tail = pre;
     this.tail!.next = null;
     this.length--;
-    return pre!.value;
+    return temp!.value;
   }
 
   //* add a node at the start of the linked list
-  prepend(value: number) {
+  prepend(value: number): boolean {
     let node = new LLNode(value);
     if (this.length === 0) {
       this.tail = node;
@@ -100,7 +100,7 @@ export class LinkedList {
   }
 
   //* remove the first node and return its value;
-  removeFirst() {
+  removeFirst(): number | null {
     if (this.length === 0) return null;
     if (this.length === 1) {
       let temp = this.head;
@@ -116,7 +116,7 @@ export class LinkedList {
     return temp!.value;
   }
 
-  //* get a node at a given index
+  //* get a node at a given index, ZERO index
   get(index: number): LLNode | null {
     if (index > this.length || index < 0) return null;
     let temp = this.head;
@@ -127,15 +127,15 @@ export class LinkedList {
   }
 
   //* set value of a node at a given index
-  set(index: number, value: number) {
+  set(index: number, value: number): boolean {
     let temp = this.get(index);
-    if (temp === null) return null;
+    if (temp === null) return false;
     temp.value = value;
     return true;
   }
 
   //* insert a new node at a given index
-  insert(index: number, value: number) {
+  insert(index: number, value: number): boolean {
     if (index === 0) {
       return this.prepend(value);
     }
@@ -153,7 +153,8 @@ export class LinkedList {
   }
 
   //* remove a node at a given index and return its value
-  remove(index: number) {
+  remove(index: number): number | null {
+    if (index >= this.length || index < 0) return null;
     if (index === 0) {
       return this.removeFirst();
     }

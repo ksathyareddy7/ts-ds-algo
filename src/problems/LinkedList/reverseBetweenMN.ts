@@ -4,7 +4,7 @@ import {
   NodeOrNull,
 } from "data-structures/LinkedList/LinkedList";
 
-//! LEETCODE LINK -> https://leetcode.com/problems/reverse-linked-list-ii/
+//? LEETCODE LINK -> https://leetcode.com/problems/reverse-linked-list-ii/
 
 class Problem extends LinkedList {
   constructor(value: number) {

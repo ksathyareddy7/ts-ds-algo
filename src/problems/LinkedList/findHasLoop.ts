@@ -1,6 +1,6 @@
 import { LinkedList, NodeOrNull } from "data-structures/LinkedList/LinkedList";
 
-//! LEETCODE PROBLEM LINK -> https://leetcode.com/problems/linked-list-cycle/
+//? LEETCODE PROBLEM LINK -> https://leetcode.com/problems/linked-list-cycle/
 
 class Problem extends LinkedList {
   constructor(value: number) {

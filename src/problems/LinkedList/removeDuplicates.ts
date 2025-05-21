@@ -1,6 +1,6 @@
 import { LinkedList, NodeOrNull } from "data-structures/LinkedList/LinkedList";
 
-//! LEETCODE LINK -> https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+//? LEETCODE LINK -> https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
 class Problem extends LinkedList {
   constructor(value: number) {
@@ -8,19 +8,17 @@ class Problem extends LinkedList {
   }
 
   solution() {
-    let values = new Set();
-
+    if (this.head === null) return null;
     let prev: NodeOrNull = null;
     let current: NodeOrNull = this.head;
-
+    // remove 1 so that initial values at head do not match in first iteration
+    let prevValue = this.head.value - 1;
     while (current !== null) {
-      if (values.has(current.value)) {
+      if (prevValue === current.value) {
         prev!.next = current.next;
-        current!.next = null;
-        current = prev!.next;
-        this.length--;
+        current = current.next;
       } else {
-        values.add(current.value);
+        prevValue = current.value;
         prev = current;
         current = current.next;
       }

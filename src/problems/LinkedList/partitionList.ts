@@ -1,10 +1,6 @@
-import {
-  LinkedList,
-  LLNode,
-  NodeOrNull,
-} from "data-structures/LinkedList/LinkedList";
+import { LinkedList, LLNode } from "data-structures/LinkedList/LinkedList";
 
-//! LEETCODE LINK -> https://leetcode.com/problems/partition-list/
+//? LEETCODE LINK -> https://leetcode.com/problems/partition-list/
 
 class Problem extends LinkedList {
   constructor(value: number) {
@@ -45,7 +41,9 @@ export function partitionListSolution() {
   ll.append(2);
   console.log("******* INITIAL LINKED LIST VALUES *******\n");
   ll.printList();
-  ll.solution(3);
-  console.log("\n******* LINKED LIST PARTITIONED BETWEEN 5 *******\n");
+  ll.solution(2);
+  console.log("\n******* LINKED LIST PARTITIONED BETWEEN 3 *******\n");
   ll.printList();
 }
+
+partitionListSolution();
